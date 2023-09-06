@@ -27,5 +27,14 @@ var createScene = function () {
     instructions.textVerticalAlignment = BABYLON.GUI.Control.VERTICAL_ALIGNMENT_BOTTOM
     advancedTexture.addControl(instructions);
 
+    BABYLON.SceneLoader.ImportMesh("", "https://dl.dropbox.com/s/bu6hr6xh5xuatve/", "mixamo2.glb", scene, function (meshes){          
+        var hero = meshes[0];
+
+        //Scale the model down        
+        hero.scaling.scaleInPlace(0.5);
+
+        //Lock camera on the character 
+        camera.target = hero;
+    });
     return scene;
 }
