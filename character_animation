@@ -17,5 +17,15 @@ var createScene = function () {
         inputMap[evt.sourceEvent.key] = evt.sourceEvent.type == "keydown";
     }));
 
+    // GUI
+    var advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI");
+    var instructions = new BABYLON.GUI.TextBlock();
+    instructions.text = "Move w/ WASD keys, K for a kick";
+    instructions.color = "white";
+    instructions.fontSize = 16;
+    instructions.textHorizontalAlignment = BABYLON.GUI.Control.HORIZONTAL_ALIGNMENT_RIGHT
+    instructions.textVerticalAlignment = BABYLON.GUI.Control.VERTICAL_ALIGNMENT_BOTTOM
+    advancedTexture.addControl(instructions);
+
     return scene;
 }
