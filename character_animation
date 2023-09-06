@@ -1,0 +1,11 @@
+var createScene = function () {
+    var scene = new BABYLON.Scene(engine);
+    scene.createDefaultEnvironment();
+    var camera = new BABYLON.ArcRotateCamera("Camera", 0, 0, 2, new BABYLON.Vector3(0, 1, 0), scene);
+    camera.setPosition(new BABYLON.Vector3(2, 2, 2));
+    camera.attachControl(canvas, true);
+    var light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(0, 1, 0), scene);
+    light.intensity = 0.6;
+
+    return scene;
+}
