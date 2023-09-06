@@ -35,6 +35,11 @@ var createScene = function () {
 
         //Lock camera on the character 
         camera.target = hero;
+
+        //Character variables 
+        var heroSpeed = 0.02;
+        var heroSpeedBackwards = 0.005;
+        var heroRotationSpeed = 0.1;
     });
     return scene;
 }
